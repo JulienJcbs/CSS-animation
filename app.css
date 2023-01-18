@@ -1,0 +1,166 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+#sidebar {
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    border-right: 4px gray solid;
+    background: white;
+    margin-left: -440px;
+}
+
+.content {
+    margin-top: 300px;
+}
+
+* {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    padding: 0;
+    font-family: sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-sprite {
+    text-align: center;
+    margin: auto;
+    height: 267px;
+    width: 435px;
+    background: url(ryu-sprite-demo.png);
+    animation: spriteMove 3000ms steps(46) infinite
+}
+
+.rainbow-text {
+    animation: changeColor infinite 5s linear;
+    background-image: linear-gradient(to right, violet, blue, orange, red, yellow, green, cyan, violet);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    width: 435px;
+    text-align: center;
+}
+
+.burger {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #FFF;
+    transition: background 0.6s;
+}
+
+.open {
+    animation: openAnimation 0.6s forwards !important;
+}
+
+.modal {
+    margin: auto;
+    margin-top: 20%;
+    background: white;
+    border-radius: 10px;
+    border: solid 1px black;
+    left: 0;
+    top: 0;
+    width: 400px;
+    height: auto;
+    text-align: center;
+}
+
+.visible {
+    visibility: visible !important;
+    animation: modalAnimation 1s forwards !important;
+}
+
+#modal-element {
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-visible {
+    visibility: visible;
+}
+
+.close {
+    position: absolute;
+    margin-left: 70px;
+    margin-top: 0px;
+}
+
+button {
+    width: 70px;
+    height: 36px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.head {
+    text-align: center;
+}
+
+@keyframes modalAnimation {
+    form {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes spriteMove {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -12282px;
+    }
+}
+
+@keyframes changeColor {
+    from,
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 440px;
+    }
+}
+
+@keyframes openAnimation {
+    form {
+        margin-left: -440px;
+    }
+    to {
+        margin-left: 0px;
+    }
+}
